@@ -1,31 +1,61 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import socketIOClient from "socket.io-client";
 import logo from './logo.svg';
 import './App.css';
 import axios from './axios';
+import AddLog from './Components/AddLog/AddLog';
+import Learnings from './Components/Learnings/Learnings';
+import Pomodoro from './Components/Pomodoro/Pomodoro';
+import ViewLog from './Components/VIewLog/ViewLog';
+import { Card } from 'antd';
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+const ENDPOINT = "https://dlogservice.herokuapp.com/";
 
 function App() {
-  let [res,setRes] = useState("")
-  axios.get(`/`).then(data=>{
-    console.log(data.data)
-    setRes(data.data)
-  })
-      
+  const [response, setResponse] = useState("");
+  let [res,setRes] = useState([])
+
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+    socket.on("FromAPI", data => {
+      setResponse(data);
+    });
+    axios.get(`/dlogs`).then(data=>{
+      setRes(data.data)
+    })
+
+  }, []);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         {res}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Layout>
+        <Header className='heading'>
+          <div>
+          It's <time dateTime={response}>{response}</time>
+          </div>
+      </Header>
+        <Content className="App">
+          <Card className="eachComp">
+            <AddLog existingLogs={res} />
+
+          </Card>
+          <Card className="eachComp">
+            <Learnings />
+
+          </Card>
+          <Card className="eachComp">
+            <Pomodoro />
+
+          </Card>
+          <Card className="eachComp">
+            <ViewLog />
+
+          </Card>
+        </Content>
+      </Layout>
+
     </div>
   );
 }
