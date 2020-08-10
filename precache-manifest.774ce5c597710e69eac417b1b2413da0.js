@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4040d64ee67db33ae84bb586a987906e",
+    "revision": "9352cffeb824e752cdc2772a9bfc8afd",
     "url": "/DlogAssistant/index.html"
   },
   {
-    "revision": "f127636bec42d0dbd62a",
+    "revision": "bcc7d1e2537cad1ce5b9",
     "url": "/DlogAssistant/static/css/2.9c8c8187.chunk.css"
   },
   {
-    "revision": "b4a0c3bce4a077a6d21c",
+    "revision": "8c9533490965cc7a12c2",
     "url": "/DlogAssistant/static/css/main.584bfa8d.chunk.css"
   },
   {
-    "revision": "f127636bec42d0dbd62a",
-    "url": "/DlogAssistant/static/js/2.27687560.chunk.js"
+    "revision": "bcc7d1e2537cad1ce5b9",
+    "url": "/DlogAssistant/static/js/2.650a8a1b.chunk.js"
   },
   {
     "revision": "d0550c944a9928585a31b6efc1a5d942",
-    "url": "/DlogAssistant/static/js/2.27687560.chunk.js.LICENSE.txt"
+    "url": "/DlogAssistant/static/js/2.650a8a1b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b4a0c3bce4a077a6d21c",
-    "url": "/DlogAssistant/static/js/main.d63622c9.chunk.js"
+    "revision": "8c9533490965cc7a12c2",
+    "url": "/DlogAssistant/static/js/main.eddbcd08.chunk.js"
   },
   {
     "revision": "f04c05033778f1127ac0",
