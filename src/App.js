@@ -13,14 +13,32 @@ import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const ENDPOINT = "https://dlogservice.herokuapp.com/";
 
-
-function App() {
-  const [response, setResponse] = useState("");
-  let [res, setRes] = useState([])
+function DailyQuote() {
   const temp = Quote.getQuote()
 
   let [quote, setQuote] = useState(temp.text)
   let [quoteAuth, setQuoteAuth] = useState(temp.author)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const temp = Quote.getQuote()
+      setQuote(temp.text)
+      setQuoteAuth(temp.author)
+
+    }, 5000)
+    return () => { clearInterval(timer) }
+  }, [])
+  return (
+    <div style={{ float: 'right', fontSize: '2vh' }}>
+      {quote} | {quoteAuth}
+
+    </div>
+  )
+}
+
+function App() {
+  const [response, setResponse] = useState("");
+  let [res, setRes] = useState([])
+
 
   const [counter, setCounter] = useState(0);
   useEffect(() => {
@@ -35,15 +53,7 @@ function App() {
 
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const temp = Quote.getQuote()
-      setQuote(temp.text)
-      setQuoteAuth(temp.author)
 
-    }, 5000)
-    return () => { clearInterval(timer) }
-  }, [])
   return (
     <div >
       <Layout>
@@ -51,10 +61,7 @@ function App() {
           <div>
             Daily Log Assistant
           </div>
-          <div style={{ float: 'right', fontSize: '2vh' }}>
-            {quote} | {quoteAuth}
-
-          </div>
+        <DailyQuote/>
         </Header>
         <Content className="App">
           <Card className="eachComp">
