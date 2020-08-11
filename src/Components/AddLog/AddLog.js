@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { EnterOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { EnterOutlined, ArrowRightOutlined, SyncOutlined } from '@ant-design/icons';
 import { List, Typography, Divider } from 'antd';
 import { Input, Tooltip, Button } from 'antd';
 import axios from '../../axios';
@@ -7,7 +7,7 @@ import { DlogService } from '../../Services/dlog.service'
 function AddLog(props) {
     const getLogs = []
     const [currentDlogs, setCurrentDlogs] = useState([])
-    const [modalVisible, setModalVisible] = useState(false)
+    const [refreshSpin, setRefreshSpin] = useState(false)
 
 
     useEffect(() => {
@@ -24,8 +24,10 @@ function AddLog(props) {
     }
 
     const refresh = async () => {
+        setRefreshSpin(true)
         const newDlogs = await DlogService.getDlogs()
         setCurrentDlogs(newDlogs)
+        setRefreshSpin(false)
     }
     const addLog = async () => {
         console.log("Adding")
@@ -78,8 +80,11 @@ function AddLog(props) {
     }
     return (
         <div className="compStyle">
-            <Input allowClear={true}  value={currLog} onChange={handleLogChange} placeholder="Add Log" suffix={suffix} onKeyDown={handleKeyPress} />
-            <Divider orientation="left">Today's Dlogs</Divider>
+            <Input allowClear={true} style={{width:'90%'}} value={currLog} onChange={handleLogChange} placeholder="Add Log" suffix={suffix} onKeyDown={handleKeyPress} />
+            <SyncOutlined spin={refreshSpin} style={{marginLeft:'1vh' ,fontSize:"3vh"}} onClick={refresh} />
+            <Divider orientation="left" >Today's Dlogs </Divider>
+
+            
             <List
                 bordered
                 style={{ height: "20vh", maxHeight: "20vh", overflowY: 'scroll' }}
