@@ -3,6 +3,7 @@ import { EnterOutlined, ArrowRightOutlined, SyncOutlined } from '@ant-design/ico
 import { List, Typography, Divider } from 'antd';
 import { Input, Tooltip, Button } from 'antd';
 import axios from '../../axios';
+import "./AddLog.css"
 import { DlogService } from '../../Services/dlog.service'
 function AddLog(props) {
     const getLogs = []

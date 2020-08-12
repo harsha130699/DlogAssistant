@@ -68,12 +68,13 @@ function App() {
             <AddLog existingLogs={res} />
 
           </Card>
-          <Card className="eachComp">
-            <Learnings />
+          <Card className="eachComp pomoStyle">
+            <Pomodoro />
+
 
           </Card>
           <Card className="eachComp">
-            <Pomodoro />
+          <Learnings />
 
           </Card>
           <Card className="eachComp">

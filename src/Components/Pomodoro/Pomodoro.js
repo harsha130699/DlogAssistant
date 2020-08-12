@@ -1,12 +1,11 @@
 import React from 'react'
 
 function Pomodoro() {
-    return (
-        <div className="compStyle">
-            Pomodoro component
-            
-        </div>
-    )
+  return (
+    <div>
+      Pomodoro Component
+    </div>
+  )
 }
 
 export default Pomodoro
