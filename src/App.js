@@ -14,13 +14,19 @@ const { Header, Footer, Sider, Content } = Layout;
 const ENDPOINT = "https://dlogservice.herokuapp.com/";
 
 function DailyQuote() {
-  const temp = Quote.getQuote()
+  let temp = Quote.getQuote()
+  while(temp.text.length > 160){
+    temp=Quote.getQuote()
+  }
 
   let [quote, setQuote] = useState(temp.text)
   let [quoteAuth, setQuoteAuth] = useState(temp.author)
   useEffect(() => {
     const timer = setInterval(() => {
       const temp = Quote.getQuote()
+      while(temp.text.length > 160){
+        temp=Quote.getQuote()
+      }
       setQuote(temp.text)
       setQuoteAuth(temp.author)
 

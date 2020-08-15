@@ -24,7 +24,7 @@
   line-height: normal;
   padding: 2vh 5%;
   color: white;
-  background: #1890ff; /* fallback for old browsers */
+  background-color: #1890ff; /* fallback for old browsers */
   
 
   height: 10vh;
