@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7d70d83c33912df6e8d4b271365452c1",
+    "revision": "f00d6082ade8776b9b1f29414d13fab5",
     "url": "/DlogAssistant/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DlogAssistant/static/css/2.9c8c8187.chunk.css"
   },
   {
-    "revision": "68762d6758d46d3ce1dc",
+    "revision": "70610965d72977823ced",
     "url": "/DlogAssistant/static/css/main.fcacbfa7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DlogAssistant/static/js/2.27fb63f1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "68762d6758d46d3ce1dc",
-    "url": "/DlogAssistant/static/js/main.1c225355.chunk.js"
+    "revision": "70610965d72977823ced",
+    "url": "/DlogAssistant/static/js/main.27d1c2ce.chunk.js"
   },
   {
     "revision": "f04c05033778f1127ac0",
