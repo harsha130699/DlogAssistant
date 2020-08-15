@@ -207,11 +207,11 @@ function LearningLoader(props) {
 
   return (
     <Modal
-      title="What did you learn today? 😃"
+      title={props.exists? "What do you want to update? 🤔" :"What did you learn today? 😃"}
       visible={props.visible}
       onOk={handleOk}
       onCancel={handleCancel}
-      okText="Add"
+      okText={props.exists ? "Update" : "Add"}
     >
       <Form form={form} name="control-hooks" onFinish={onFinish}>
         <Form.Item
@@ -255,9 +255,10 @@ function LearningLoader(props) {
           <Button htmlType="button" onClick={onReset}>
             Reset
           </Button>
+          { !props.exists &&
           <Button type="link" htmlType="button" onClick={onFill}>
             Fill form
-          </Button>
+          </Button>}
         </Form.Item>
       </Form>
     </Modal>
