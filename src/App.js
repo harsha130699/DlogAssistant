@@ -38,7 +38,8 @@ function DailyQuote() {
 function App() {
   const [response, setResponse] = useState("");
   let [res, setRes] = useState([])
-
+  let [learnres, learnsetRes] = useState([])
+  
 
   const [counter, setCounter] = useState(0);
   useEffect(() => {
@@ -48,6 +49,9 @@ function App() {
     });
     axios.get(`/dlogs`).then(data => {
       setRes(data.data)
+    })
+    axios.get(`/learnings`).then(data => {
+      learnsetRes(data.data)
     })
 
 
@@ -74,7 +78,7 @@ function App() {
 
           </Card>
           <Card className="eachComp">
-          <Learnings />
+          <Learnings existingLearnings={learnres} />
 
           </Card>
           <Card className="eachComp">

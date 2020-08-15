@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+
+
 
 function Pomodoro() {
   return (
     <div>
-      Pomodoro Component
+      Pomodoro component
     </div>
-  )
+  );
 }
 
-export default Pomodoro
+export default Pomodoro;

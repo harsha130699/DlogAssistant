@@ -82,12 +82,13 @@ function AddLog(props) {
     return (
         <div className="compStyle">
             <Input allowClear={true} style={{width:'90%'}} value={currLog} onChange={handleLogChange} placeholder="Add Log" suffix={suffix} onKeyDown={handleKeyPress} />
-            <SyncOutlined spin={refreshSpin} style={{marginLeft:'1vh' ,fontSize:"3vh"}} onClick={refresh} />
+            <SyncOutlined spin={refreshSpin}  style={{ position:"absolute",right:"3vh" ,flaot: "right", fontSize: "3vh" }} onClick={refresh} />
             <Divider orientation="left" >Today's Dlogs </Divider>
 
             
             <List
                 bordered
+                
                 style={{ height: "20vh", maxHeight: "20vh", overflowY: 'scroll' }}
                 dataSource={currentDlogs}
                 renderItem={item => (
