@@ -23,7 +23,7 @@ function DailyQuote() {
   let [quoteAuth, setQuoteAuth] = useState(temp.author)
   useEffect(() => {
     const timer = setInterval(() => {
-      const temp = Quote.getQuote()
+      let temp = Quote.getQuote()
       while(temp.text.length > 160){
         temp=Quote.getQuote()
       }

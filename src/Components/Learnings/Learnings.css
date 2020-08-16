@@ -1,11 +1,13 @@
-.inputBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.inputBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.dividerSync{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.dividerSync {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
+
