@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/DlogAssistant/static/css/main.4ad7cd24.chunk.css",
-    "main.js": "/DlogAssistant/static/js/main.bad717c4.chunk.js",
-    "main.js.map": "/DlogAssistant/static/js/main.bad717c4.chunk.js.map",
+    "main.js": "/DlogAssistant/static/js/main.f98ab018.chunk.js",
+    "main.js.map": "/DlogAssistant/static/js/main.f98ab018.chunk.js.map",
     "runtime-main.js": "/DlogAssistant/static/js/runtime-main.aad95abc.js",
     "runtime-main.js.map": "/DlogAssistant/static/js/runtime-main.aad95abc.js.map",
     "static/css/2.9c8c8187.chunk.css": "/DlogAssistant/static/css/2.9c8c8187.chunk.css",
     "static/js/2.e1123422.chunk.js": "/DlogAssistant/static/js/2.e1123422.chunk.js",
     "static/js/2.e1123422.chunk.js.map": "/DlogAssistant/static/js/2.e1123422.chunk.js.map",
     "index.html": "/DlogAssistant/index.html",
-    "precache-manifest.b35ef028928bfbfb1440a9a506e6b6ea.js": "/DlogAssistant/precache-manifest.b35ef028928bfbfb1440a9a506e6b6ea.js",
+    "precache-manifest.b879fdb21a1f9a37020c2654defeee93.js": "/DlogAssistant/precache-manifest.b879fdb21a1f9a37020c2654defeee93.js",
     "service-worker.js": "/DlogAssistant/service-worker.js",
     "static/css/2.9c8c8187.chunk.css.map": "/DlogAssistant/static/css/2.9c8c8187.chunk.css.map",
     "static/css/main.4ad7cd24.chunk.css.map": "/DlogAssistant/static/css/main.4ad7cd24.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.9c8c8187.chunk.css",
     "static/js/2.e1123422.chunk.js",
     "static/css/main.4ad7cd24.chunk.css",
-    "static/js/main.bad717c4.chunk.js"
+    "static/js/main.f98ab018.chunk.js"
   ]
 }
