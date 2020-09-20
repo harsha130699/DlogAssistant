@@ -1,28 +1,32 @@
 import axios from "../axios";
+import { createAuthProvider } from "./Auth";
+
+export const {useAuth, authPost, authGet,authDelete,authPatch, login, logout} = createAuthProvider();
 
 export const DlogService = {
   getDlogs: async () => {
-    const res = await axios.get("/dlogs");
+    console.log("Getting logs")
+    const res = await authGet("/dlogs");
     return res.data;
   },
   addDLog: async (task) => {
-    const item = await axios.post("/dlogs/addDlog", { task: task });
+    const item = await authPost("/dlogs/addDlog", { task: task });
     return item.data;
   },
 
   removeDlog: async (id) => {
-    await axios.delete("/dlogs/" + id);
+    await authDelete("/dlogs/" + id);
   },
   updateDlog: async (id, task) => {
-    await axios.patch("/dlogs/" + id, { task: task });
+    await authPatch("/dlogs/" + id, { task: task });
   },
 
   getLearnings: async () => {
-    const res = await axios.get("/learnings");
+    const res = await authPost("/learnings");
     return res.data;
   },
   addLearnings: async (learning, from, incident) => {
-    const item = await axios.post("/learnings/addLearning", {
+    const item = await authPost("/learnings/addLearning", {
       learning,
       from,
       incident,
@@ -31,17 +35,56 @@ export const DlogService = {
   },
 
   removeLearnings: async (id) => {
-    await axios.delete("/learnings/" + id);
+    await authDelete("/learnings/" + id);
   },
   updateLearnings: async (id, learning, from, incident) => {
-    await axios.patch("/learnings/" + id, {
+    await authPatch("/learnings/" + id, {
       learning,
       from,
       incident,
     });
   },
   getLearningsById: async (id)=>{
-   const res = await axios.get("/"+id)
+   const res = await authGet("/"+id)
    return res.data
+  },
+  confirmUser:async({email,password})=>
+  {
+    try {
+      const res = await axios.post("/auth/login",{
+        email,
+        password
+      })
+      console.log("object:",res)
+      if(res.status == 200){
+        login(res.data)
+        return res
+      }
+        
+    } catch (error) {
+      
+    }
+    
+    
+  },
+  registerUser:async({name,email,password})=>
+  {
+    try {
+      const res = await axios.post("/auth/register",{
+        name,
+        email,
+        password
+      })
+      if(res.status == 200)
+        login(res)
+      return res
+    } catch (error) {
+      
+    }
+    
+    
+  },
+  logOut:async()=>{
+    logout()
   }
 };
